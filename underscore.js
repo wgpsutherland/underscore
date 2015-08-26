@@ -48,8 +48,8 @@
   // Export the Underscore object for **Node.js**, with
   // backwards-compatibility for their old module API. If we're in
   // the browser, add `_` as a global object.
-  if (typeof exports !== 'undefined') {
-    if (typeof module !== 'undefined' && module.exports) {
+  if (typeof exports != 'undefined') {
+    if (typeof module != 'undefined' && module.exports) {
       exports = module.exports = _;
     }
     exports._ = _;
@@ -1149,7 +1149,7 @@
     if (a !== a) return b !== b;
     // Exhaust primitive checks
     var type = typeof a;
-    if (type !== 'function' && type !== 'object' && typeof b !== 'object') return false;
+    if (type != 'function' && type != 'object' && typeof b != 'object') return false;
     return deepEq(a, b, aStack, bStack);
   };
 
@@ -1160,7 +1160,7 @@
     if (b instanceof _) b = b._wrapped;
     // Compare `[[Class]]` names.
     var className = toString.call(a);
-    if (className !== toString.call(b)) return false;
+    if (className != toString.call(b)) return false;
     switch (className) {
       // Strings, numbers, regular expressions, dates, and booleans are compared by value.
       case '[object RegExp]':
